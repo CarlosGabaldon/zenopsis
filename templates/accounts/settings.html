@@ -1,0 +1,40 @@
+{% extends "__base__.html" %}
+
+
+{% block content %}
+
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+<br/><br/>
+<h2>Settings</h2>
+<div id="avatar">
+    <img src="/site_media/avatars/{{profile.avatar_filename}}" width="110" height="110" alt="{{full_name}}" />
+</div>
+<div id="settings">
+    <form action="." method="post" enctype="multipart/form-data" class="form-large">
+       <div id="small-fields">
+           {% if form.errors %}
+	   {{ form.errors }}
+             <p class="error">Please correct the errors below.</p>
+           {% endif %}
+ 
+             <label for="avatar">Photo:</label>{{ form.avatar }}{{form.avatar_file}}<br/><br/>
+
+             <label for="first_name">First Name:</label> {{ form.first_name }}<br/><br/>
+
+             <label for="last_name">Last Name:</label>{{ form.last_name }}<br/><br/>
+
+             <label for="email">Email:</label>{{ form.email }}<br/><br/>
+
+             <label for="country">Country:</label>{{ form.country }}<br/><br/>
+
+
+          <input type="submit" value="Save Changes" class="submit-button"  />
+        </div>
+    </form>
+<br/>
+<a href="/password/change/">Change your password</a>
+<br/><br/>
+</div>
+
+{% endblock %}

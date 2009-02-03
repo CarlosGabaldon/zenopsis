@@ -1,0 +1,12 @@
+{% if tag_list %}
+    <div>
+        <ul class="list">
+        {% for tag in tag_list %}
+            <span style="{{tag.font_size}}">
+              <a title="{{tag.count}}" href="{{tag.uri}}">{{tag.name}}</a> 
+            </span>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+

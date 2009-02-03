@@ -1,0 +1,11 @@
+{% if article_site_list %}
+    <div>
+        <ul class="list">
+        {% for site in article_site_list %}
+            <li>
+              <a href="/sites/{{site.key}}">{{site.url}}</a> ({{site.count}})<br/>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}

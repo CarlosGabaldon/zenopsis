@@ -1,0 +1,7 @@
+Dependencies:
+
+Python 2.4 +
+PIL 1.1.6
+Recaptcha service: http://recaptcha.net/apidocs/captcha/
+textile 2.0.11 (http://cheeseshop.python.org/pypi/textile or sudo easy_install textile )
+Django Edge

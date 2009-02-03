@@ -1,0 +1,40 @@
+{% extends "__base__.html" %}
+
+
+{% block content %}
+
+{% load model_tags %}
+
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+<br/><br/>
+
+{% render_synopsis synopsis user "True" %}
+
+<div id="comments-section">
+    <h3>Comments</h3>
+    {% render_comment_list synopsis.comments user %}
+
+    {% if user.is_authenticated %}
+        {% render_comment_form synopsis %}
+    {% endif %}
+</div>
+
+<br/><br/>
+
+{% endblock %}
+
+
+{% block content_two %}
+<br/>
+{% render_tag_list tag_list %}
+
+{% endblock %}
+
+
+{% block content_three %}
+<br/>
+<!--{% render_synopsis_article_site_list article_site_list %} -->
+{% render_comment_list_recent recent_comment_list user %}
+
+{% endblock %}

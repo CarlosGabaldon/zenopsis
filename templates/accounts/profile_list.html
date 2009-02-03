@@ -1,0 +1,17 @@
+
+{% if profile_list %}
+    <div>
+        <ol>
+        {% for profile in profile_list %}
+            <li>
+                <span>
+                    <img height="30px" width="30px" src="/site_media/avatars/{{profile.avatar_filename}}" />
+                </span>
+                <span>
+                    <a href="/profile/{{ profile.user.username }}">{{profile.user.username}}</a> - {{profile.country_name}}
+                </span>
+            </li>
+        {% endfor %}
+        </ol>
+    </div>
+{% endif %}

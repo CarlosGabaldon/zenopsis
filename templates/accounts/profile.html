@@ -1,0 +1,46 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+
+<br/><br/>
+<a href="/">Popular</a> | <a href="/recent/">Most Recent</a> 
+
+<br/><br/>
+<span>
+    <img src="/site_media/avatars/{{profile.avatar_filename}}" 
+         width="60" 
+         height="60" alt="{{profile.full_name}}" />
+</span>
+<span id="avatar-username">
+    {{username}} - {{country}}
+</span>
+    
+<br/><br/>
+<div id="{{list}}_list">
+<ul id="navigation">
+<li><a id="posted" href="/profile/{{username}}/">Posted</a></li>
+<li><a id="voted" href="/profile/{{username}}/voted/">Voted on</a></li>
+<li><a id="commented" href="/profile/{{username}}/commented/">Commented on</a></li>
+</ul>
+</div>
+
+<ol id="nav_list">
+	{% for synopsis in user_posted_synopsis_list %}
+    	<li>
+        	{% render_synopsis synopsis user  %}
+    	</li>
+	{% endfor %}
+	{% for synopsis in user_voted_synopsis_list %}
+    	<li>
+        	{% render_synopsis synopsis user  %}
+    	</li>
+	{% endfor %}
+	{% for synopsis in user_commented_synopsis_list %}
+    	<li>
+        	{% render_synopsis synopsis user  %}
+    	</li>
+	{% endfor %}
+</ol>
+{% endblock %}

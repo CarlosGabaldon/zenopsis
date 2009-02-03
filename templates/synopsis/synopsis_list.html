@@ -1,0 +1,37 @@
+{% load model_tags %}
+
+{% if synopsis_list %}
+    <div id="synopsis-list">
+        <ol>
+        {% for synopsis in synopsis_list %}
+            <li>
+                {% render_synopsis synopsis user  %}
+            </li>
+        {% endfor %}
+        </ol>
+        
+        {% if has_previous_page %}
+            {% if previous_page_is_first_page %}
+                <a href="/{{base_path}}/"><< Back</a>
+            {% else %}
+                <a href="/{{base_path}}/{{previous_page}}/"><< Back</a>
+            {% endif %}
+            
+        {% endif %}
+        
+        {% if pages %}
+            {% for page in pages %}
+                {% if page.is_current %}
+                    <span>{{page.number}}</span>&nbsp;
+                {% else %}
+                    <a href="/{{base_path}}/{{page.number}}/">{{page.number}}</a> &nbsp;
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        
+        {% if has_next_page %}
+            <a href="/{{base_path}}/{{next_page}}/">Next >> </a>
+        {% endif %}
+        <br/><br/>
+    </div>
+{% endif %}

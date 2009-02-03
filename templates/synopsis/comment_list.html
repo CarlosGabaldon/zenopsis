@@ -1,0 +1,16 @@
+{% load model_tags %}
+
+<ul class="{{comment_list_css}}">
+{% if comment_list %}
+    {% for comment in comment_list %}
+       {% render_comment comment user %}
+    {% endfor %}
+{% endif %}
+</ul>
+
+
+
+
+
+
+

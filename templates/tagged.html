@@ -1,0 +1,25 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> | <span> {{tagged}}</span> 
+<br/><br/>
+{% render_synopsis_list synopsis_list user has_previous_page has_next_page current_page base_path pages  %}
+
+{% endblock %}
+
+
+{% block content_two %}
+<br/>
+{% render_tag_list tag_list %}
+
+{% endblock %}
+
+
+{% block content_three %}
+<br/>
+<!--{% render_synopsis_article_site_list article_site_list %} -->
+{% render_comment_list_recent recent_comment_list user %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+    <br/><br/>
+    <h2>Submit a New Synopsis </h2>
+    <div id="new-form">
+        <form action="." method="post" class="form-large">
+            {% if form.error_dict %}
+                 <p class="error">Please correct the errors below.</p>
+            {% endif %}
+            
+            {% if form.article_url.errors %}
+              {{ form.article_url.html_error_list }}
+            {% endif %}
+            
+            <div>
+                <label for="title" accesskey="2">Enter the URL of the Article</label>
+                {{ form.article_url }}<br/><br/>
+            </div>
+            
+
+            {% if form.title.errors %}
+              {{ form.title.html_error_list }}
+            {% endif %}
+            
+            <div>
+                <em class="field-count"><span id="titleCounter">50</span> Characters Left</em>
+                <label for="title" accesskey="2">Article Title <span>(Be descriptive with the title.)</span></label>
+                {{ form.title }}<br/>
+            </div>
+            
+
+            {% if form.text.errors %}
+              {{ form.text.html_error_list }}
+            {% endif %}
+            <div>
+                <em class="field-count"><span id="bodytextCounter">1000</span> Characters Left</em>
+                <label for="bodytext" accesskey="3">Synopsis <span>(Write your summary of the article.)</span></label>
+                 {{ form.text }}<br/>
+            </div>
+            {% if form.tags.errors %}
+              {{ form.tags.html_error_list }}
+            {% endif %}
+            <div>
+                <label for="bodytext" accesskey="3">Tags <span>(Tags help people search for your synopsis.)</span></label>
+                {{ form.tags }}
+            </div>
+            
+             <br/>
+             
+             {% if captcha_error %}
+                 {{captcha_error|safe}}
+             {% endif %}
+            
+            <label for="bodytext" accesskey="3">Are You Human?<span>(Enter the two words you see in the image.)</span></label>
+            {{captcha_form|safe}}
+             
+             <br/>
+             <span id="small-fields">
+            <input type="submit" value="Submit Synopsis" class="submit-button"  />
+            </span>&nbsp;
+            or &nbsp;
+            <a href='/'>Cancel</a>
+            
+            <br/><br/>
+
+        </form>
+        
+    </div>
+    
+{% endblock %}
+
+{% block content_two %}
+<br/><br/><br/><br/><br/>
+{% render_textile_help %}
+
+{% endblock %}
+
+
+
+

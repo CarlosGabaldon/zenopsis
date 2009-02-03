@@ -1,0 +1,34 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block header %}
+<link rel="alternate" type="application/rss+xml" title="Subscribe to popular" href="/feeds/popular/" />
+{% endblock %}
+
+
+{% block content %}
+<br/>
+<span>Popular</span>
+<a href="/feeds/popular/" title="Subscribe to popular feeds" rel="alternate" type="application/rss+xml">
+<img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" height="15px" width="15px" alt="" style="border:0"/></a>
+ | <a href="/recent/">Most Recent</a> 
+<br/><br/>
+{% render_synopsis_list synopsis_list user has_previous_page has_next_page current_page "popular" pages %}
+
+{% endblock %}
+
+
+{% block content_two %}
+<br/>
+{% render_tag_list tag_list %}
+
+{% endblock %}
+
+
+{% block content_three %}
+<br/>
+<!-- render_synopsis_article_site_list article_site_list %}-->
+{% render_comment_list_recent recent_comment_list user %}
+
+{% endblock %}

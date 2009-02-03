@@ -1,0 +1,23 @@
+{% extends "__base__.html" %}
+
+{% block content %}
+
+<p>To link to this synopsis from your site or blog, just copy and paste the following code onto your page.
+
+<div><textarea class="link-code" cols="80" rows="6" readonly>
+<script type="text/javascript">
+var zenopsis_name = "{{synopsis.permalink}}";
+</script>
+<script type="text/javascript" 
+src="http://zenopsis.com/site_media/js/synopsis-linking.js">
+</script></textarea></div>
+<br/>
+<p>The synopsis link will look like this on your page. Click the down arrow to try it now!</p>
+<script type="text/javascript">
+var zenopsis_name = "{{synopsis.permalink}}";
+</script>
+<script type="text/javascript" src="http://zenopsis.com/site_media/js/synopsis-linking.js"></script>
+<br/>
+
+{% endblock %}
+

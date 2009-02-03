@@ -1,0 +1,59 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+  <br/><br/>
+  <h2>Sign Up</h2>
+    <div id="signup">
+      <form action="." method="post" class="form-large">
+        <div id="small-fields">
+	  {% if form.errors %}
+	  {{form.errors}}
+          <p class="error">Please correct the errors below.</p>
+          {% endif %}
+
+	  <label for="first_name">First Name: <span>(Not publicly visible, we keep this to ourselves.)</span></label>
+	    {{form.first_name}}<br/><br/>
+
+	  <label for="last_name">Last Name: <span>(Not publicly visible, we keep this to ourselves.)</span></label>
+	    {{form.last_name}}<br/><br/>
+       
+	  <label for="email">Email Address: <span>(Not publicly visible, we keep this to ourselves.)</span></label>
+	    {{form.email}}<br/><br/>
+
+
+        <label for="username">Username: <span>(Publicly visible, this is how the community knows you.)</span>
+            </label> {{ form.username }}<br/><br/>
+
+        <label for="password1">Password:</label> {{ form.password1 }}<br/><br/>
+
+        <label for="password2">Password (again):</label> {{ form.password2 }}
+        <br/><br/>
+
+        
+        <label for="terms" accesskey="3">Terms of Service:</label>
+        <textarea>
+            {% render_terms_text %}
+        </textarea>
+        <label for="terms_check">
+            <input type="checkbox" checked style="padding:0px; width: 15px" />
+            I have read and agree to the Terms of Service</label>
+        <br/><br/>
+        
+         {% if captcha_error %}
+             {{captcha_error|safe}}
+         {% endif %}
+         <label for="bodytext" accesskey="3">Are You Human?<span>(Enter the two words you see in the image.)</span></label>
+        {{captcha_form|safe}}
+        
+        <br/>
+        <input type="submit" value="Sign Up" class="submit-button"  />
+        </div>
+      </form>
+    </div>
+    <br/><br/>
+{% endblock %}
+

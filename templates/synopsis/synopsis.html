@@ -1,0 +1,37 @@
+
+{% load model_tags %}
+{% load markup %}
+
+{% if synopsis %}
+    <div id="synopsis-{{synopsis.id}}">
+        <h2>     
+         <a class="vote-up" href="/synopsis/{{synopsis.id}}/vote/" {{has_voted|safe}} title="Vote">
+             <img height="13px" width="15px" border="0" src="/site_media/images/check.png" /> 
+        </a>
+        {% if detail %}
+            {{synopsis.title}}</h2><a href="/synopsis/{{synopsis.id}}/link">Link to this synopsis</a>
+            <p>{{synopsis.text|safe|textile}}</p>
+        {% else %}
+            <a href="/synopsis/{{synopsis.permalink}}">{{synopsis.title}}</a></h2>
+            <p>{{synopsis.short_text|safe|textile}}</p>
+        {% endif %}
+        
+        
+        <span id="synopsis-{{synopsis.id}}-vote" class="vote-count">{{synopsis.votes}}</span>
+        posted by <a href='/profile/{{ synopsis.author.username}}'>{{ synopsis.author.username}}</a>
+        <label for="pub_date">on </label>{{synopsis.published}} with
+        <a href="/synopsis/{{synopsis.permalink}}#comments-section">{{synopsis.number_of_comments}}</a>
+        {% if is_author_of_synopsis %}
+            <a href="/synopsis/{{synopsis.permalink}}/edit">edit</a><br/>
+        {% endif %}
+        {% render_tag_list tag_list %}
+        {% if detail %}
+            <label for="article_url">Article Url: </label><a href="{{synopsis.article_url}}">{{synopsis.article_url}}</a><br/>
+            <label for="article_site_url">Site Url: </label><a href="{{synopsis.article_site_url}}">{{synopsis.article_site_url}}</a><br/>
+            
+        {% endif %}
+        
+    </div>
+{% endif %}
+
+

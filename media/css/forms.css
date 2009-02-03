@@ -1,0 +1,765 @@
+.form-note {
+	font-size: 85%;
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+	margin-top: 0;
+	display: block;
+        visibility: hidden;
+}
+
+.form-divide {
+	padding: 0.3em 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.form-divide span {
+	font-size: 85%;
+}
+
+.form-divide span img {
+	vertical-align: middle;
+}
+
+/* .form-error, .form-error-basic, .error, .warning {
+        color: #900;
+        font-size: 85%;
+        font-weight: bold;
+        margin-bottom: 1em;
+        background: url(/img/error.gif) no-repeat;
+        padding: 2px 0 4px 18px;
+} */
+
+.form-full {
+	width: 100%;
+}
+
+#url {
+	font-size: 135%;
+	white-space: nowrap;
+}
+
+#url-string {
+	width: 680px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#bodytextpreview {
+	overflow: hidden;
+	width: 550px;
+}
+
+fieldset #url {
+	width: 500px;
+	display: inline;
+}
+
+.form-large .form-text, .form-large .form-text-variable, .form-large #small-fields input, .form-large textarea, #topic-default1, #topic-default2, #topic-default3, .form-large select, .form-large .form-brief {
+	font-size: 126%;
+	background: #FFFADB url(/img/form-back.gif) repeat-x;
+	border: 1px solid #CBB945;
+	color: #776B1B;
+	padding: 2px;
+}
+
+.form-large select {
+	padding: 1px 0;
+}
+
+.form-large textarea.disabled {
+	background: #eee;
+	border: 1px solid #ccc;
+	color: #666;
+}
+
+.form-large input {
+	font-size: 126%;
+	padding: 3px 7px !important;
+}
+
+.form-large div {
+/*	padding-bottom: 1em;
+	clear: left; */
+}
+
+.form-large .inline {
+	float: left;
+	clear: none;
+	padding-right: 5px;
+}
+
+input.button1, input.button2 {
+	font-size: 100%;
+	margin-top: 2px;
+	padding: 3px 10px;
+}
+
+.button2 {
+	color: #777;
+}
+
+.button3 {
+	border: 1px solid #EEE8DD;
+	color: #105CB6;
+	margin: 0 5px;
+	line-height: 2;
+	background: #fff;
+	cursor: pointer;
+	background: url(/img/menu-back.gif) 0 100% repeat-x;
+}
+
+.button3:hover {
+	border-color: #003;
+}
+
+.form-large .form-text {
+	width: 260px;
+	padding: 3px;
+}
+
+.form-large .form-brief {
+	width: 200px;
+} /*IE6*/
+
+.form-large .form-text-variable {
+	width: 96%;
+}
+
+.form-large #small-fields input{
+    width: 280px;
+    
+}
+
+.form-large #small-fields input.submit-button{
+    width: 150px;
+    
+}
+.form-large textarea  {
+	height: 20em;
+	width: 99%;
+}
+
+.form-large label {
+	float: none;
+	display: block;
+	font-size: 105%;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	color: #817A71;
+	margin: 0.7em 0 0.1em 0;
+}
+
+.form-large label span {
+	font-size: 80%;
+	font-weight: normal;
+	color: #999;
+	letter-spacing: 0;
+}
+
+.form-large label.form-checkbox {
+	display: inline;
+	vertical-align: middle;
+	position: relative;
+	top: -3px;
+}
+
+.form-large .form-field {
+	padding-bottom: 1em;
+}
+
+#topic-default1, #topic-default2, #topic-default3 {
+	width: 1.5em;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.form-url-text {
+	font-size: 126%;
+	font-weight: normal;
+}
+
+.col, .col dt, .col dd {
+	margin: 0;
+	padding: 0;
+    white-space: nowrap;
+}
+
+.col, dl.col {
+	float: left;
+	margin-right: 8px;
+}
+
+.col {
+	padding: 5px 5px 15px 5px;
+	/*min-height: 160px;*/
+} * html dl.col { height: 160px; }
+
+#titlepreviewheading {
+    min-height: 18px;
+} * html #titlepreviewheading { height: 18px; }
+
+#descriptionpreview {
+    min-height: 18px;
+} * html #descriptionpreview { height: 18px; }
+
+.col label {
+	font-weight: normal;
+	display: inline;
+}
+
+fieldset .col dt {
+	float: none;
+	width: auto;
+	text-align: left;
+}
+
+dl.col dt {
+	font-weight: bold;
+	font-size: 105%;
+	margin-top: 5px;
+}
+
+dl.col dd {
+	padding-left: 20px;
+	padding-top: 2px;
+	font-size: 80%;
+}
+
+dl.col label {
+	font-weight: bold;
+}
+
+dl.col dd label {
+	font-weight: normal;
+	letter-spacing: 0em;
+}
+
+dl.col input {
+	vertical-align: middle;
+	margin-top: -1px;
+}
+
+#submit-topics dl.col dd, #submit-topics dl.col dt {
+	padding-left: 5px;
+}
+
+.inline-footer {
+	padding-top: 1em;
+}
+
+.inline-footer form {
+	display: inline;
+}
+
+div.captcha label {
+/*	font-size: 85%;
+	letter-spacing: 0; */
+}
+
+img.captcha {
+	margin-top: 6px;
+	vertical-align: middle;
+}
+
+span#audiocaptchalink {
+/*        display: block;
+        color: #999;
+        font-size: 85%;
+        clear: left;
+        margin-bottom: 0.5em;
+*/
+} /*remote.css*/
+
+.form-tools input {
+	float: right;
+	font-size: 105%;
+	font-weight: bold;
+}
+
+.field-count {
+	float: right;
+	font: bold 105% sans-serif;
+	margin-top: 4px;
+	padding-right: 20px;
+	color: #3B9300;
+}
+
+.field-count-over {
+	color: #c00;
+}
+
+.side-help {
+	float: right;
+	width: 40%;
+	margin-top: 16px;
+}
+
+.side-help li {
+	margin-bottom: 4px;
+}
+
+.registration-form fieldset {
+	width: 50%;
+}
+
+.registration-form .captcha {
+	float: left;
+	margin-right: 4px;
+}
+.registration-form input#captcha {
+	margin-bottom: 1em
+}
+/***** fieldsets *****/
+
+fieldset {
+	border: 1px solid #ddd;
+	margin: 1em 0;
+	padding: 15px;
+	clear: left;
+} * html fieldset { padding-top: 0; }
+
+legend {
+	font-size: 135%;
+	font-weight: normal;
+	letter-spacing: -0.03em;
+	line-height: 1;
+	color: #80A71F;
+	padding: 0 0.5em; /* Top and Bottom for IE7 */
+} * html legend { margin-bottom: 15px; padding: 0 0.5em; }
+
+fieldset fieldset legend {
+	font-size: 105%;
+	font-weight: bold;
+}
+
+legend span {
+	color: #999;
+	font-size: 90%;
+	letter-spacing: 0;
+}
+
+fieldset dl {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset dt {
+	clear: left;
+	float: left;
+	width: 18em; /* increase for wider dt text */
+	text-align: right;
+	padding: 0 1em 0.5em 0;
+}
+
+fieldset dd {
+	padding: 0 0 0.5em 0;
+	font-weight: bold;
+}
+
+fieldset.labels label {
+	width: 15em;
+	float: left;
+	text-align: right;
+	display: block;
+	padding: 0 0.5em 0.2em 0;
+}
+
+fieldset.labels div {
+	padding: 0.2em 0;
+	clear: left
+}
+
+.fieldset-footer {
+	margin: 0;
+	position: relative;
+	left: -15px;
+	padding: 10px 0 15px 15px;
+	background: url(/img/field-back.gif) no-repeat;
+	clear: left;
+	top: 15px;
+}
+
+fieldset fieldset input {
+	font-size: 100% !important;
+}
+
+/* Confirmation Dialogue */
+
+
+
+/* Instruction List */
+
+.instruction-list {
+	margin: 0;
+	padding: 0;
+}
+
+.instruction-list li {
+	list-style: none;
+	background: url(/img/important.png) no-repeat 7px 11px;
+	margin: 0;
+	padding: 10px 0 10px 25px;
+}
+
+.instruction-list .instruction-search {
+	background-image: url(/img/important-search.png);
+}
+
+.instruction-list .instruction-link {
+	background-image: url(/img/important-link.png);
+}
+
+.instruction-list .instruction-write {
+	background-image: url(/img/important-write.png);
+}
+
+/* New Registration */
+
+#wrapper { 
+	padding-top: 8px !important;
+}
+
+.main {
+	margin-right: 340px !important;
+}
+
+.col-1 {
+	width: 300px;
+	float: left;
+	margin: 0 !important;
+
+}
+
+.col-2 {
+	clear: right;
+	padding-left: 320px;
+	margin-right: -340px;
+}
+
+.col-1 img {
+	float: left !important;
+	margin-bottom: 1em;
+}
+
+.col-1 hr {
+	width: 300px;
+	clear: left;
+	margin: 0;
+	padding: 0;
+}
+
+.form-wrapper {
+	clear: right;
+}
+
+.form-container {
+	background: #f5efc9 url(/img/register-form-container-top-left.gif) top left no-repeat;
+	width: 100% !important;
+	margin: 10px 0 5px 0;
+	position: relative !important;
+	clear: right;
+	position: relative;
+}
+
+.form-container form {
+	clear: right;
+	background: transparent url(/img/register-form-container-top-right.gif) top right no-repeat;
+	padding: 20px; 	
+}
+
+.form-container form a,
+.form-container form a:link,
+.form-container form a:visited {
+	text-decoration: underline !important;
+}
+
+.form-container form a:hover,
+.form-container form a:active {
+	text-decoration: underline;
+}
+
+.form-container h3 {
+	clear: right;
+	margin: 0 !important;
+	padding: 0 1em 1em 1em !important; 
+	color: #333;
+	float: left;
+	width: 50%;
+}
+
+.form-container h4.login-prompt {
+	float: right;
+	clear: right;
+	margin: -0.4em 0 0 0 !important;
+	padding: 0 1em 1em 26px !important; 
+	color: #333;
+	font-size: 0.9em !important;
+	font-weight: bold;
+	line-height: 1em;
+	background: transparent url(/img/icon-arrow-upper-left.gif) 0 2px no-repeat;
+}
+
+.form-container h4.login-prompt span {
+	font-size: 1em !important;
+	font-weight: normal;
+}
+
+.form-footer-wrap {
+	height: 10px;
+	background: transparent url(/img/register-form-container-bottom-left.gif) top left no-repeat;
+}
+
+.form-footer { 
+	height: 10px;
+	background: transparent url(/img/register-form-container-bottom-right.gif) top right no-repeat;
+}
+
+.form-container .or {
+	width: 100%;
+	height: 36px;
+	background: transparent url(/img/register-form-or.gif) top center no-repeat;
+	position: absolute;
+	top: -20px;
+	left: 0;
+	margin: 0 auto;
+}
+
+.form-container br.clear {
+	clear: left;
+}
+
+div.inputs-horizontal {
+	width: 100%;
+	padding: 0em 0 0.8em 0;
+}
+
+div.inputs-horizontal input.narrow {
+	border: 1px solid red;
+	margin-right: 2em;
+}
+
+.form-container form fieldset {
+	border: 0;
+	float: left;
+	clear: right;
+	padding: 0 0 0 20px !important;
+	color: #758656;
+	font-weight: bold;
+	text-align: left;
+	margin: 0 !important;
+}
+
+.form-container form input#checkbutton {
+	width: 10.4em;
+	float: left;
+	clear: right;
+	margin-left: 0.5em !important;
+	margin-right: 0 !important
+}
+
+.form-container form fieldset.wide.extra-pad {
+	padding-top: 1em !important;	
+}
+
+.form-login,
+.form-register {
+	min-height: 6em;
+	padding-top: 1em;
+}
+
+.form-login .form-row,
+.form-register .form-row {
+	position: relative;
+	text-align: left;
+	clear: left;
+	min-height: 30px;
+}
+
+.form-register label {
+	float: left;
+	width: 12em;
+	clear: left;
+}
+
+.form-login input,
+.form-login select,
+.form-register input,
+.form-register select {
+	float: left;
+	clear: right;
+	height: 1.4em;
+	font-size: 1em;
+	margin: 0 0.5em 0 0;
+}
+
+.form-register fieldset.wide {
+	width: 100%;
+}
+
+.form-register h4 {
+	color: #333;
+	font-size: 1.2em !important;
+	font-weight: normal;
+	line-height: 1em;
+}
+
+.form-register h4 span,
+.form-register span {
+	font-size: 0.8em !important;
+	color: #666 !important;
+	font-weight: normal !important;
+	line-height: 1.2em !important; 
+	padding: 0 !important;
+}
+
+.form-register input.register-input {
+	width: 20em;
+	border: 1px solid #c0c0c0;
+	float: left;
+}
+
+.form-register input.register-input.narrow {
+	width: 10em;
+}
+
+.form-register div.captcha {
+	clear: right;
+}
+
+.form-register div.captcha-left {
+	width: 18em;
+	float: left;
+	height: 4em;
+}	
+
+.form-register div.captcha-right {
+	clear: left;
+	margin: 0.5em 0 0 12em;
+}
+
+.form-register label.captcha {
+	width: 18em;
+	padding: 0;
+	float: left;
+	clear: left;
+	color: #666;
+	font-weight: normal;
+}
+
+.form-register img.captcha {
+	margin: 0 1em 0 0em;
+	vertical-align: middle;
+}
+
+.form-register input#captcha {
+	width: 10em;
+	margin: 0 0 0 0em;
+}
+
+.form-register input#register-terms {
+	float: left;
+	margin-top: 0.4em;
+	margin-right: 1em;
+}
+
+.form-register label.form-checkbox {
+	float: left;
+	clear: right;
+	width: 90%;
+}
+
+.form-register div.hidden {
+	display: none;
+}
+
+.form-register div.form-note, 
+.form-register div.form-error,
+.form-register div.form-success {
+	font-weight: normal;
+	background: transparent url(/img/register-info.gif) no-repeat scroll 1px 1px;
+	font-size: 85%;
+	padding: 0 2em;
+	line-height: 1.5em;
+	clear: left;
+	margin: 0 0 0.5em 0;
+
+}
+
+.form-register div.form-error {
+	background: transparent url(/img/register-error.gif) no-repeat scroll 1px 1px;
+	font-weight: bold;
+}
+
+.form-register div.form-success {
+	background: transparent url(/img/register-success.gif) no-repeat scroll 1px 1px;
+}
+
+.form-register div.tip {
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	background: transparent url(/img/register-input-tip-bg.gif) top left no-repeat;
+	color: #455c1c;
+	z-index: 10;
+	padding: 0 0 0 2em;
+	margin: -0.5em 0 0 30em;
+	text-align: left;
+	width: 220px;
+	clear: left;
+}
+
+.form-register div.tip.narrow {
+	margin: -0.5em 0 0 20em;
+}
+
+.form-container form input.narrow {
+	width: 90%;
+	border: 1px solid #c0c0c0;
+}
+
+.form-container form input.submit {
+	font-size: 1em;
+	height: 2em;
+	line-height: 2em;
+	color: #333;
+	margin: 1em 1em 0 0 !important;
+	padding: 0 1em;
+	clear: right;
+}
+
+.form-container form input.checkbox {
+	width: 1em;
+	height: 1em;
+}
+
+.form-container form a,
+.form-container form a:link,
+.form-container form a:visited {
+	color: #758656;
+	text-decoration: none;
+	height: 2em;
+	line-height: 2em;
+}
+
+.form-container form a:hover,
+.form-container form a:active {
+	text-decoration: underline;
+}
+
+input.button {
+	height: 1.8em;
+	margin: 0 1em 0 0  !important;
+	font-size: 1em !important;
+	line-height: 1.8em !important;
+}
+
+.login-prompt {
+	float: right;
+	clear: right;
+}
+
+#audiocaptchalink {
+	vertical-align: middle;
+	margin-left: 5px;
+}

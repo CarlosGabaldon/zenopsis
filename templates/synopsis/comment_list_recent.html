@@ -1,0 +1,23 @@
+{% load model_tags %}
+{% load markup %}
+
+<h2>Recent Comments »</h2>
+<ul>
+{% if comment_list %}
+    {% for comment in comment_list %}
+       <li>
+              <img height="20px" width="20px" src="/site_media/avatars/{{comment.posted_by.get_profile.avatar_filename}}" />
+              <a href='/profile/{{ comment.posted_by.username}}'>{{ comment.posted_by.username}}</a> <br/>
+
+              {{comment.short_text|safe|textile}}
+          </li>
+    {% endfor %}
+{% endif %}
+</ul>
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% load model_tags %}
+{% load markup %}
+
+{% if comment %}
+    <li>
+        <img height="20px" width="20px" src="/site_media/avatars/{{comment.posted_by.get_profile.avatar_filename}}" /> by
+        <a href='/profile/{{ comment.posted_by.username}}'>{{ comment.posted_by.username}}</a> on {{comment.formated_date}}
+        <br/><br/>
+        
+        {{comment.text|safe|textile}}
+        
+        <br/><br/>
+        {% if user.is_authenticated %}
+            <a href="#" onclick="$('#comment_{{comment.id}}_reply_to').toggle(); return false;">Post reply to comment</a>
+        
+            {% if comment.comments %}
+                | <a href="#" onclick="$('#reply_to_comment_list_{{comment.id}}').toggle(); return false;">replies</a>
+            {% endif %}
+        {% endif %}
+        
+  &nbsp;<div id="comment_{{comment.id}}_reply_to" style="display: none;">
+             {% render_comment_form  comment.synopsis  comment %}
+         </div>
+        <br/><br/>
+  
+        <div id="reply_to_comment_list_{{comment.id}}">
+               {% render_comment_list comment.comments user "reply-thread"  %}
+        </div>
+    </li>
+{% endif %}

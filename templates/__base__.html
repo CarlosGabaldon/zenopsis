@@ -1,0 +1,87 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Zenopsis</title>
+    
+    {% block header %}
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to popular" href="/feeds/recent/" />
+    {% endblock %}
+    
+    
+    
+    <!-- Generic Libraries -->
+    <script type="text/javascript" src="/site_media/js/jquery-1.2.1.js"></script>
+
+    <!-- Application Code -->
+    <script type="text/javascript" src="/site_media/js/gabaluu.js"></script>
+    
+    <!-- Layout -->
+    <link rel="stylesheet" type="text/css" href="/site_media/css/grids.css">
+    
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="/site_media/css/style.css">
+    
+    <!-- forms -->
+    <link rel="stylesheet" type="text/css" href="/site_media/css/forms.css">
+
+</head>
+<body>
+<div id="doc3" class="yui-t4">
+	<div id="hd">
+		<!-- PUT MASTHEAD CODE HERE -->
+		<span id="site-title"><a href="/popular/">Zenopsis</a>
+		    <span style="font-size: 75%;">ALPHA</span></span> |
+        {% if user.is_authenticated %}<a href="/synopsis/new/">new</a> | {% endif %}
+        <a href="/search/">search</a> |
+        <a href="/members/">members</a> |
+        <!--<a href="/">help</a> | -->
+        {% if user.is_authenticated %}
+            <a href="/accounts/profile/">settings</a> | 
+            {{user.username}} <a href="/logout/">logout</a> 
+        {% else %}
+            <a href="/login/">login</a> or
+            <a href="/signup/">sign up!</a> 
+        {% endif %}
+	</div>
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-gc">
+					<div class="yui-u first">
+						<!-- PUT MAIN COLUMN 1 CODE HERE -->
+						{% block content %}{% endblock %}
+					</div>
+					<div class="yui-u">
+						<!-- PUT MAIN COLUMN 2 CODE HERE -->
+						{% block content_two %}{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="yui-b">
+			<!-- PUT SECONDARY COLUMN CODE HERE -->
+			{% block content_three %}{% endblock %}
+		</div>
+	</div>
+	<div id="ft">
+		<!-- PUT FOOTER CODE HERE -->
+		 &copy; 2007 Gabaluu, LLC
+        <a href="/about">About</a> |
+        <!--<a href="http://blog.gabaluu.com">Blog</a> | -->
+        <a href="/terms">Terms of Service</a> |
+        <a href="/privacy">Privacy Policy</a> |
+        <a href="mailto:support@gabaluu.com" class="bug">Email a Bug Report</a> |
+        <a href="http://www.djangoproject.com/">
+         <img src="http://media.djangoproject.com/img/badges/djangojoint107x25_grey.gif" border="0" alt="A Django joint." title="A Django joint." />
+        </a>
+	<p style="font-size: 85%;">User-posted content, unless source cited, 
+	  is licensed under a <a href="http://creativecommons.org/licenses/publicdomain/">
+	    Creative Commons Public Domain License</a>.
+	</p>
+	</div>
+</div>
+</body>
+</html>

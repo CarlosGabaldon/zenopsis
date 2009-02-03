@@ -1,0 +1,36 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+<br/><br/>
+<h2>Search</h2>
+<div id="search">
+     <form action="." method="post"class="form-large">
+         <div id="small-fields">
+           {% if form.error_dict %}
+             <p class="error">Please correct the errors below.</p>
+           {% endif %}
+         
+             {% if form.search_query.errors %}
+               {{ form.search_query.html_error_list }}
+             {% endif %}
+             {{ form.search_query }} 
+
+          <input type="submit" value="Search" class="submit-button"  />
+        </div>
+    </form>
+</div>
+
+<br/><br/>
+
+{% if synopsis_list %}
+    <h1>Results</h1>
+{% endif %}
+
+{% render_synopsis_list synopsis_list user %}
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "__base__.html" %}
+
+
+{% block content %}
+
+{% load model_tags %}
+
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+<br/><br/>
+<h2>Members</h2>
+
+{% render_profile_list profile_list %}
+
+
+{% endblock %}

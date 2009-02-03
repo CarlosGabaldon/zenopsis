@@ -1,0 +1,54 @@
+{% extends "__base__.html" %}
+
+{% load model_tags %}
+
+{% block content %}
+<br/>
+<a href="/popular/">Popular</a> | <a href="/recent/">Most Recent</a> 
+    <br/><br/>
+    <h2>Edit Synopsis </h2>
+    <div id="new-form">
+        <form action="." method="post" class="form-large">
+            {% if form.error_dict %}
+                 <p class="error">Please correct the errors below.</p>
+            {% endif %}
+            
+            <h3>{{synopsis.title}}</h3>
+   
+            <h4><a href="{{synopsis.article_url}}">{{synopsis.article_url}}</a></h4>
+            
+            <h3>{{synopsis.published}}</h3>
+        
+            
+            {% if form.text.errors %}
+              {{ form.text.html_error_list }}
+            {% endif %}
+            <label for="text">Synopsis:</label><br/> {{ form.text }}<br/><br/>
+            
+            <div>
+                <label for="bodytext" accesskey="3">Tags </label>
+                <input id="id_tags" type="text" name="tags" value="{{synopsis.tags_as_string}}" maxlength="100" />
+            </div>
+            
+             <br/>
+             <span id="small-fields">
+            <input type="submit" value="Update Synopsis" class="submit-button"  />
+            </span>&nbsp;
+            or &nbsp;
+            <a href='/'>Cancel</a>
+            
+            <br/><br/>
+
+        </form>
+    </div>
+    
+{% endblock %}
+
+{% block content_two %}
+<br/><br/><br/><br/><br/>
+{% render_textile_help %}
+
+{% endblock %}
+
+
+
